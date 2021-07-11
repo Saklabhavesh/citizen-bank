@@ -5,9 +5,9 @@ import Section1 from './home1';
 
 function Home() {
     return <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <Section1 />
-        <div className="footer-1 footer">
+        {/* <div className="footer-1 footer">
             <div className="container ">
                 <div className="row">
                     <div className="col"><h1>Citizen bank</h1></div>
@@ -25,7 +25,7 @@ function Home() {
 
                 </div>
             </div>
-        </div>
+        </div> */}
     </div>
 }
 

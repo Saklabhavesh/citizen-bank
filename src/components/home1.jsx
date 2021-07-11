@@ -1,7 +1,10 @@
 import React from 'react';
 
 function Home1() {
-    return <div className="home-1">
+    return <div  style={{
+        height: "700px"
+    }}>
+    <div className="home-1">
         <div className="container">
             <div className="row">
                 <div className="col home-1_a">
@@ -13,6 +16,7 @@ function Home1() {
                 </div>
 
             </div>
+        </div>
         </div>
     </div>
 }

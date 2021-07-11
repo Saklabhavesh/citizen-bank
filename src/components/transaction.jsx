@@ -43,7 +43,7 @@ function Transaction() {
     }, []);
 
     return <div>
-        <Navbar user={user.name} />
+        {/* <Navbar user={user.name} /> */}
         <div className="welcome">
             <h1 style={{ textAlign: "center" }}>Transaction History</h1>
         </div>
@@ -63,7 +63,9 @@ function Transaction() {
 
         </div>
         <hr></hr>
-        <div>
+        <div style={{
+            height: "400px"
+        }}>
             {trans.map(el => (
                 <Row
                     id={el.id}
@@ -74,7 +76,7 @@ function Transaction() {
             ))}
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
     </div>
 }
 

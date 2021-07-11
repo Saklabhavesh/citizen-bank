@@ -42,7 +42,7 @@ function Credit() {
         });
     }, []);
     return <div>
-        <Navbar user={user.name} />
+        {/* <Navbar user={user.name} /> */}
         <div className="welcome">
             <h1 style={{ textAlign: "center" }}>Debit History</h1>
         </div>
@@ -62,7 +62,9 @@ function Credit() {
 
         </div>
         <hr></hr>
-        <div>
+        <div style={{
+            height: "400px"
+        }}>
             {debit.map(el => (
                 <Row
                     id={el.id}
@@ -72,7 +74,7 @@ function Credit() {
                     Date={el.Date} />
             ))}
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
 }
 

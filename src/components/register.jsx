@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Navbar from './navbar';
-import Footer from './footer';
+import { Link, useHistory } from 'react-router-dom';
+
 
 function Register() {
-
+    const history = useHistory();
     const [input, setInput] = useState({
         name: "",
         email: "",
@@ -34,16 +34,13 @@ function Register() {
             amount: input.amount,
             password: input.password
         }
-        // console.log(register);
         axios.post('http://localhost:3001/register', register).then(res => {
-            // console.log(res);
-            window.location.href = "/login";
+            history.push("/login");
         }).catch((err) => {
-            console.log(err)
+            console.log(err);
         });
     }
     return <div>
-        <Navbar />
         <div className="login">
             <div className="container form ">
                 <form className="form-group" onSubmit={handleClick}>
@@ -74,11 +71,10 @@ function Register() {
                         <span className="line2"></span>
                     </div>
                     <button type="submit">Register</button>
-                    <p>Already a member? <a href="/login">Log In</a></p>
+                    <p>Already a member? <Link to="/login"><a>Log In</a></Link></p>
                 </form>
             </div>
         </div>
-        <Footer />
     </div>
 }
 

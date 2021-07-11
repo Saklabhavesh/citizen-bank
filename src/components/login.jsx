@@ -2,9 +2,10 @@ import Footer from './footer';
 import Navbar from './navbar';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link, useHistory } from 'react-router-dom';
 
-function Login() {
-
+function Login({login}) {
+    const history = useHistory()
     const [input, setInput] = useState({
         email: "",
         password: ""
@@ -31,13 +32,12 @@ function Login() {
             withCredentials: true,
             url: "http://localhost:3001/login",
         }).then((res) => {
-            // console.log(res);
-            window.location.href = "/account";
+            history.push("/account")
         });
     }
 
     return <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="login">
             <div className="container form ">
                 <form className="form-group" onSubmit={handleSubmit}>
@@ -52,11 +52,11 @@ function Login() {
                         <span className="line2"></span>
                     </div>
                     <button type="submit">Login</button>
-                    <p>Not a member? <a href="/register">Sign up</a></p>
+                    <p>Not a member? <Link to="/register"> <a>Sign up</a></Link></p>
                 </form>
             </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
 }
 

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './navbar';
-import Footer from './footer';
 import axios from 'axios';
 
 function Blog() {
@@ -23,7 +21,7 @@ function Blog() {
         });
     }, []);
     return <div>
-        <Navbar user={user.name} />
+        {/* <Navbar user={user.name} /> */}
         <div className="welcome">
             <h1 style={{ textAlign: "center" }}>Our Blogs</h1>
         </div>
@@ -68,7 +66,7 @@ This insurance cover includes the employee, spouse, two children (up to 25 years
             <br></br>
             The scheme would have to be invoked by Sept. 30 and implemented within 90 days of invocation, RBI Governor Shaktikanta Das said today</p>
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
 }
 

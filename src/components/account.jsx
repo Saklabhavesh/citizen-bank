@@ -3,6 +3,7 @@ import Navbar from './navbar';
 import Box from './box';
 import Footer from './footer';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Account() {
 
@@ -76,7 +77,6 @@ function Account() {
         });
     }, []);
     return <div>
-        <Navbar user={user.name} />
         <div className="welcome">
             <h1>Welcome {user.name}!!</h1>
             <hr></hr>
@@ -92,50 +92,49 @@ function Account() {
                     date={date}
 
                 /></div>
-                <div className="col"><a href="/account/credit" className="link"><Box
+                <div className="col"><Link to="/account/credit" className="link"><a><Box
                     color="box-blue"
-                    amount={credit[credit.length - 1].amount}
+                    amount={credit.length < 1 ? "NA" : credit[credit.length - 1].amount }
                     head="Last Credit :"
-                    name={`From : ${credit[credit.length - 1].from}`}
-                    no={`A/C no : ${credit[credit.length - 1].id}`}
-                    date={credit[credit.length - 1].Date}
+                    name={`From : ${credit.length < 1 ? "NA" : credit[credit.length - 1].from}`}
+                    no={`A/C no : ${credit.length < 1 ? "NA" : credit[credit.length - 1].id}`}
+                    date={credit.length < 1 ? date : credit[credit.length - 1].Date}
                 />
-                </a></div>
+                </a></Link></div>
 
-                <div className="col"><a href="/account/debit" className="link"><Box
+                <div className="col"><Link to="/account/debit" className="link"><a><Box
                     color="box-red"
-                    amount={debit[debit.length - 1].amount}
+                    amount={debit.length < 1 ? "NA" : debit[debit.length - 1].amount}
                     head="Last Debit :"
-                    name={`To : ${debit[debit.length - 1].to}`}
-                    no={`A/C no : ${debit[debit.length - 1].id}`}
-                    date={debit[debit.length - 1].Date}
+                    name={`To : ${debit.length < 1 ? "NA" : debit[debit.length - 1].to}`}
+                    no={`A/C no : ${debit.length < 1 ? "NA" : debit[debit.length - 1].id}`}
+                    date={debit.length < 1 ? date : debit[debit.length - 1].Date}
                 />
-                </a></div>
+                </a></Link></div>
             </div>
         </div>
         <div className="container">
             <div className="row">
-                <div className="col"><a href="/account/transaction" className="link"><Box
+                <div className="col"><Link to="/account/transaction" className="link"><a><Box
                     color="box-yellow"
-                    amount={trans[trans.length - 1].amount}
+                    amount={trans.length < 1 ? "NA" : trans[trans.length - 1].amount}
                     head="Last Transaction :"
-                    name={`To : ${trans[trans.length - 1].to}`}
-                    no={`From : ${trans[trans.length - 1].from}`}
-                    date={trans[trans.length - 1].Date}
+                    name={`To : ${trans.length < 1  ? "NA" : trans[trans.length - 1].to}`}
+                    no={`From : ${trans.length < 1  ? "NA" : trans[trans.length - 1].from}`}
+                    date={trans.length < 1 ? date : trans[trans.length - 1].Date}
                 />
-                </a></div>
-                <div className="col"><a href="/account/blog" className="link"><Box
+                </a></Link></div>
+                <div className="col"><Link to="/account/blog" className="link"><a><Box
                     color="box-grey"
                     amount="Priceless"
                     head="Our Blogs"
                     name={`From : Authors`}
                     date={date}
                 />
-                </a></div>
+                </a></Link></div>
                 <div className="col"></div>
             </div>
         </div>
-        <Footer />
     </div>
 }
 

@@ -53,7 +53,7 @@ function Transfer() {
         });
     }
     return <div>
-        <Navbar user={user.name} />
+        {/* <Navbar user={user.name} /> */}
         <div className="welcome">
             <h1 style={{ textAlign: "center" }}>Make Your tansaction</h1>
         </div>
@@ -104,7 +104,7 @@ function Transfer() {
 
             </form>
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
 }
 

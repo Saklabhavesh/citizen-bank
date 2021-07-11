@@ -52,6 +52,7 @@ nav {
 
 .home-1 {
     width: 100%;
+    height: 90%;
     position: relative;
     background: url("./Images/hero-bg.png") center bottom no-repeat;
     background-size: cover;
